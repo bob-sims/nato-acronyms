@@ -25,6 +25,14 @@ function ApplicationWindow() {
 		}
 	});
 	self.add(actionBar.viewProxy);
+	
+	actionBar.addEventListener('buttonPress', function(e) {
+		if (e.id === 'about') {
+			var Window = require('/ui/handheld/android/AboutWindow');
+			var w = new Window();
+			w.open();
+		}
+	});
 		
 	//construct UI
 	var firstView = new FirstView();

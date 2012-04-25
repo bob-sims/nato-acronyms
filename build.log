@@ -6,13 +6,12 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.020852 seconds on emulator to get ready
+[DEBUG] waited 0.014250 seconds on emulator to get ready
 [DEBUG] com.bobsims.natoacronyms installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING CREATED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/images/blue_gradient.png => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/images/blue_gradient.png
-[TRACE] COPYING MODIFIED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/handheld/android/ActionBarView.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/handheld/android/ActionBarView.js
+[TRACE] COPYING CREATED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/handheld/android/AboutWindow.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/handheld/android/AboutWindow.js
 [TRACE] COPYING MODIFIED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/handheld/android/ApplicationWindow.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/handheld/android/ApplicationWindow.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables

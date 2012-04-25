@@ -10,7 +10,7 @@ exports.selectItems = function(_term, _callback) {
 	var db = Ti.Database.open(DATABASE_NAME);
 	var rows = db.execute('select * from acronyms where term LIKE ?', _term+'%');
 	while (rows.isValidRow()) {
-		retData.push({term:rows.fieldByName('term'), id:rows.fieldByName('definition')});
+		retData.push({term:rows.fieldByName('term'), definition:rows.fieldByName('definition')});
 		//Ti.API.info(rows.fieldByName('term'));
 		rows.next();
 	}
@@ -35,7 +35,7 @@ exports.selectItem = function(_term, _callback) {
 	var db = Ti.Database.open(DATABASE_NAME);
 	var rows = db.execute('select * from acronyms where term = ?', _term);
 	while (rows.isValidRow()) {
-		retData.push({term:rows.fieldByName('term'), id:rows.fieldByName('definition')});
+		retData.push({term:rows.fieldByName('term'), definition:rows.fieldByName('definition')});
 		Ti.API.info(rows.fieldByName('term'));
 		rows.next();
 	}

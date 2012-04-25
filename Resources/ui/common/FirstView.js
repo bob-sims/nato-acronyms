@@ -28,7 +28,8 @@ function FirstView() {
 	});
 		
 	self.add(createTable());
-	self.add(label);	
+
+	//self.add(label);	
 	
 	search.addEventListener('change', tableRefresh);
 	
@@ -67,7 +68,7 @@ function tableRefresh(e) {
 function callBack(_data) {
 	var tableData = [];
 	for (var i = 0; i < _data.length; i++) {
-		tableData.push({title:_data[i].term});
+		tableData.push({title:_data[i].term, definition:_data[i].definition});
 		//Ti.API.info(_data[i].term);
 	}
 	table.setData(tableData);
@@ -86,7 +87,12 @@ function createTable() {
 
 	table = Ti.UI.createTableView({
 		top:45,
-		data:tableData
+		//data:tableData
+	});
+	
+	table.addEventListener('click', function(e) {
+		Ti.API.info(e.rowData.title+': '+e.rowData.definition);
+//		self.fireEvent('itemSelected', { link: e.row.link });
 	});
 	
 	return table;
