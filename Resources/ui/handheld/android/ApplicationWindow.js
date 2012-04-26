@@ -39,6 +39,13 @@ function ApplicationWindow() {
 	firstView.top = 45;
 	self.add(firstView);
 	
+	firstView.addEventListener('itemSelected', function(e) {
+		Ti.API.info('itemSelected event fired! '+e.term+': '+e.definition);	
+		// todo: make this x-platform
+		var Window = require('DetailWindow');
+		var w = new Window(e);
+		w.open();
+	});
 	return self;
 }
 

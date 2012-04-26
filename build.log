@@ -5,14 +5,25 @@ Logfile initialized
 [INFO] Titanium SDK version: 2.0.1 (04/12/12 16:33 999c68a)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
-[DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.014250 seconds on emulator to get ready
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 30 seconds)
+[DEBUG] waited 30.094669 seconds on emulator to get ready
+[INFO] Waiting for the Android Emulator to become available
 [DEBUG] com.bobsims.natoacronyms installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING CREATED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/handheld/android/AboutWindow.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/handheld/android/AboutWindow.js
+[TRACE] COPYING MODIFIED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/common/AboutView.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/common/AboutView.js
+[TRACE] COPYING CREATED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/common/DetailView.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/common/DetailView.js
+[TRACE] COPYING MODIFIED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/common/FirstView.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/common/FirstView.js
+[TRACE] COPYING MODIFIED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/handheld/android/AboutWindow.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/handheld/android/AboutWindow.js
 [TRACE] COPYING MODIFIED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/handheld/android/ApplicationWindow.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/handheld/android/ApplicationWindow.js
+[TRACE] COPYING CREATED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/handheld/android/DetailWindow.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/handheld/android/DetailWindow.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [DEBUG] found drawable-long-land-hdpi splash screen at /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/android/images/res-long-land-hdpi/default.png
@@ -29,7 +40,4 @@ Logfile initialized
 [INFO] Re-launching application ... NATO Acronyms
 [INFO] Launching application ... NATO Acronyms
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.bobsims.natoacronyms/.NatoAcronymsActivity }
-Warning: Activity not started, its current task has been brought to the front
 
-[INFO] Relaunched NATO Acronyms ... Application should be running.
-[INFO] Android Emulator has exited
