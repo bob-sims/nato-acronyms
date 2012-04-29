@@ -16,8 +16,16 @@ function FirstView() {
 		top:0,
 		hintText:'Enter search term.'
 	});
+	self.add(search);	
 	
-	self.add(search);
+	search.addEventListener('cancel', function(e) {
+		if (Ti.Platform.name === 'android') {
+	        // Clear search bar
+	        search.value ="";
+	        search.blur();
+	    }
+	})
+
 
 	//label using localization-ready strings from <app dir>/i18n/en/strings.xml
 	var label = Ti.UI.createLabel({
@@ -31,11 +39,19 @@ function FirstView() {
 	self.add(table);
 	table.addEventListener('click', function(e) {
 		Ti.API.info(e.rowData.term+': '+e.rowData.title);
-		self.fireEvent('itemSelected', {term:e.rowData.term, definition:e.rowData.title});
-	});
+		//self.fireEvent('itemSelected', {term:e.rowData.term, definition:e.rowData.title});
+		  var dialog = Ti.UI.createAlertDialog({
+		    cancel: 0,
+		    buttonNames: ['OK','Share'],
+		    message: e.rowData.title,
+		    title: e.rowData.term
+		  }).show();
+			});
 	//self.add(label);	
 	
 	search.addEventListener('change', tableRefresh);
+	
+	search.addEventListener('return', termSearch);
 	
 	//db.selectItems('CAP', callBack);
 
@@ -45,6 +61,12 @@ function FirstView() {
 	});
 	
 	return self;
+}
+
+function termSearch(e) {
+	// fire table refresh
+	Ti.API.info('Searching for: '+e.value.toUpperCase());
+	db.selectItem(e.value.toUpperCase(), callBack)
 }
 
 function tableRefresh(e) {
@@ -69,26 +91,24 @@ function tableRefresh(e) {
 	},500) */
 }
 
-function callBack(_data) {
+function callBack(_term, _data) {
 	var tableData = [];
-	for (var i = 0; i < _data.length; i++) {
-		tableData.push({term:_data[i].term, title:_data[i].definition});
-		//Ti.API.info(_data[i].term);
+
+	if(_data.length) {
+		for (var i = 0; i < _data.length; i++) {
+			tableData.push({term:_data[i].term, title:_data[i].definition});
+			Ti.API.info(_data[i].term);
+		}
+	}
+	else {
+		Ti.API.info('no hit');
+		tableData.push({term:_term,title:'no hit for '+_term});
 	}
 	table.setData(tableData);
 	
 }
 
 function createTable() {
-	//some dummy data for our table view
-	var tableData = [
-		{title:'Apples', price:'1.25'},
-		{title:'Grapes', price:'1.50'},
-		{title:'Oranges', price:'2.50'},
-		{title:'Bananas', price:'1.50'},
-		{title:'Pears', price:'1.40'},
-		{title:'Kiwis', price:'1.00'}
-	];
 
 	table = Ti.UI.createTableView({
 		top:45,

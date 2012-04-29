@@ -16,15 +16,8 @@ exports.selectItems = function(_term, _callback) {
 	}
 	db.close();
 	
-	// no rows returned?
-	
-	if(retData.length==0 && _callback) {
-		_callback(null);
-		return;
-	}
-	
 	if(_callback) {
-		_callback(retData);
+		_callback(_term, retData);
 	}
 	
 	return retData;
@@ -40,5 +33,10 @@ exports.selectItem = function(_term, _callback) {
 		rows.next();
 	}
 	db.close();
+	
+	if(_callback) {
+		_callback(_term, retData);
+	}
+	
 	return retData;
 };

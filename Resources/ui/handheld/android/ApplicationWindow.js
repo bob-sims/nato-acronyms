@@ -6,9 +6,10 @@ function ApplicationWindow() {
 		
 	//create component instance
 	var self = Ti.UI.createWindow({
-		backgroundColor:'#ffffff',
+		//backgroundColor:'#ffffff',
 		navBarHidden:true,
-		exitOnClose:true
+		exitOnClose:true,
+		backgroundImage:'/images/back.jpg'
 	});
 	
 	//home action bar
