@@ -5,15 +5,14 @@ Logfile initialized
 [INFO] Titanium SDK version: 2.0.1 (04/12/12 16:33 999c68a)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
-[TRACE] adb devices returned 1 devices/emulators
-[DEBUG] Device connected... (waited 5 seconds)
-[DEBUG] waited 5.028337 seconds on emulator to get ready
-[INFO] Waiting for the Android Emulator to become available
+[DEBUG] Device connected... (waited 0 seconds)
+[DEBUG] waited 0.012969 seconds on emulator to get ready
 [DEBUG] com.bobsims.natoacronyms installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
 [TRACE] COPYING MODIFIED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/common/FirstView.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/common/FirstView.js
+[TRACE] COPYING MODIFIED FILE: /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/ui/handheld/ApplicationWindow.js => /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/build/android/bin/assets/Resources/ui/handheld/ApplicationWindow.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [DEBUG] found drawable-long-land-hdpi splash screen at /Users/bobsims/Titanium Studio Workspace/NATO Acronyms/Resources/android/images/res-long-land-hdpi/default.png

@@ -19,46 +19,38 @@ function FirstView() {
 	self.add(search);	
 	
 	search.addEventListener('cancel', function(e) {
-		if (Ti.Platform.name === 'android') {
-	        // Clear search bar
-	        search.value ="";
-	        search.blur();
-	    }
+	    Ti.API.info('cancel clicked');
+	    search.value='';
+	    search.blur();
+	    
 	})
-
-
-	//label using localization-ready strings from <app dir>/i18n/en/strings.xml
-	var label = Ti.UI.createLabel({
-		color:'#000000',
-		text:String.format(L('welcome'),'Titanium'),
-		height:'auto',
-		width:'auto'
-	});
 	
-	var table = createTable();	
-	self.add(table);
-	table.addEventListener('click', function(e) {
+	var table = createTable();
+	var alertDialog = function(e) {
 		Ti.API.info(e.rowData.term+': '+e.rowData.title);
-		//self.fireEvent('itemSelected', {term:e.rowData.term, definition:e.rowData.title});
-		  var dialog = Ti.UI.createAlertDialog({
+	 	var dialog = Ti.UI.createAlertDialog({
 		    cancel: 0,
-		    buttonNames: ['OK','Share'],
+		    buttonNames: ['OK','Copy'],
 		    message: e.rowData.title,
 		    title: e.rowData.term
-		  }).show();
-			});
-	//self.add(label);	
+		  });
+		dialog.addEventListener('click', function(e) {
+		  	Ti.API.info(e.source.title+': '+e.source.message);
+		  	if(e.index=1) {
+		  		Ti.UI.Clipboard.setText(e.source.message+' ('+e.source.title+')');
+		  	};
+		  });
+		// only show dialog if results exist
+		if (table.results) {		
+			dialog.show();
+		};
+	};	
+	table.addEventListener('click', alertDialog);
+	self.add(table);
 	
 	search.addEventListener('change', tableRefresh);
 	
 	search.addEventListener('return', termSearch);
-	
-	//db.selectItems('CAP', callBack);
-
-	//Add behavior for UI
-	label.addEventListener('click', function(e) {
-		alert(e.source.text);
-	});
 	
 	return self;
 }
@@ -67,6 +59,7 @@ function termSearch(e) {
 	// fire table refresh
 	Ti.API.info('Searching for: '+e.value.toUpperCase());
 	db.selectItem(e.value.toUpperCase(), callBack)
+	search.blur();
 }
 
 function tableRefresh(e) {
@@ -77,32 +70,22 @@ function tableRefresh(e) {
 			db.selectItems(e.value, callBack)
 		}
 	},500)
-	/*
-	if (e.value.length > 1) {
-		Ti.API.info('old length: '+search.value.length);
-		Ti.API.info('new length: '+e.value.length);
-	}
-	//alert(e.value);
-	
-	setTimeout(function() {
-		if (e.value.length > 1) {
-			Ti.API.info(e.value)
-		}
-	},500) */
 }
 
 function callBack(_term, _data) {
 	var tableData = [];
-
+		
 	if(_data.length) {
 		for (var i = 0; i < _data.length; i++) {
-			tableData.push({term:_data[i].term, title:_data[i].definition});
+			tableData.push({term:_data[i].term, title:_data[i].definition, color:'black'});
 			Ti.API.info(_data[i].term);
+			table.results = true;
 		}
 	}
 	else {
 		Ti.API.info('no hit');
-		tableData.push({term:_term,title:'no hit for '+_term});
+		tableData.push({term:_term,title:'no entry for '+_term, color:'black'});
+		table.results = false;
 	}
 	table.setData(tableData);
 	
@@ -112,7 +95,6 @@ function createTable() {
 
 	table = Ti.UI.createTableView({
 		top:45,
-		//data:tableData
 	});
 	
 	return table;
