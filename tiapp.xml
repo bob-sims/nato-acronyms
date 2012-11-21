@@ -7,7 +7,7 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>2.0.1.GA2</sdk-version>
+    <sdk-version>2.0.2.GA</sdk-version>
     <id>com.bobsims.natoacronyms</id>
     <name>NATO Acronyms</name>
     <version>1.0</version>
@@ -37,7 +37,7 @@
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-    	<manifest>
+        <manifest>
             <supports-screens android:anyDensity="false"/>
         </manifest>
     </android>
