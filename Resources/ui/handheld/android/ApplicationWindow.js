@@ -15,10 +15,6 @@ function ApplicationWindow() {
 	//home action bar
 	var actionBar = new ActionBarView({
 		buttons: {
-/*			checkin: {
-				title:'checkin',
-				width:80
-		}, */
 			about: {
 				icon:'/images/light_info@2x.png',
 				width:40

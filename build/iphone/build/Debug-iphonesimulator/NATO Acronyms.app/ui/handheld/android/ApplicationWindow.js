@@ -1,1 +1,0 @@
-/Users/bobsims/Documents/Titanium Studio Workspace/nato-acronyms/Resources/ui/handheld/android/ApplicationWindow.js

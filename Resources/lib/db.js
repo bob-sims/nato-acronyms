@@ -5,6 +5,18 @@ exports.createDb = function() {
 	Ti.API.info('creating db '+DATABASE_NAME+'...');
 };
 
+exports.countItems = function() {
+	var retData = [];
+	var db = Ti.Database.open(DATABASE_NAME);
+	var rows = db.execute('SELECT COUNT(*) as howMany FROM acronyms');
+	while (rows.isValidRow()){
+		retData.push({count:rows.fieldByName('howMany')});
+		rows.next();
+	}
+	db.close();
+	return retData[0].count;
+}
+
 exports.selectItems = function(_term, _callback) {
 	var retData = [];
 	var db = Ti.Database.open(DATABASE_NAME);

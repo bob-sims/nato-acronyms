@@ -13,9 +13,11 @@ function AboutWindow() {
 	
 	var actionBar = new ActionBarView({
 		title:'About',
+		//color:'#dbddde',
+		color: 'red',
 		buttons: {
 			cancel: {
-				icon:'/images/light_x-3@2x.png',
+				icon:'/images/light_x-2@2x.png',
 				width:40
 			}
 		}

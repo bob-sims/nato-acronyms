@@ -1,12 +1,18 @@
 //Application Window Component Constructor
 function ApplicationWindow() {
 	//load component dependencies
-	var FirstView = require('ui/common/FirstView');
+	var FirstView = require('ui/common/FirstView'),
+		AboutView = require('ui/common/AboutView');
 		
 	//create component instance
 	var self = Ti.UI.createWindow({
-		backgroundColor:'#ffffff'
+		backgroundColor:'#ffffff',
+		//"navBarHidden":"true"
+		//backgroundImage:'/images/back.jpg'
 	});
+		
+	var firstView = new FirstView(),
+		aboutView = new AboutView();
 		
 	var about = Titanium.UI.createButton({
 		title: 'About',
@@ -26,11 +32,55 @@ function ApplicationWindow() {
 	}); 
 	
 	//construct UI
-	var firstView = new FirstView();
+
+
 	firstView.setBottom(40);
-	self.add(firstView);
-	self.add(toolbar);
-	Ti.API.info(JSON.stringify(toolbar));
+	
+	//create master view container
+	var firstContainerWindow = Ti.UI.createWindow({
+		"navBarHidden":"true",
+	});
+	firstContainerWindow.add(toolbar);
+	firstContainerWindow.add(firstView);
+	
+	//create detail view container
+	var aboutContainerWindow = Ti.UI.createWindow({
+		title:'About',
+		"navBarHidden":"false"
+	});
+	aboutContainerWindow.add(aboutView);
+	
+	//create iOS specific NavGroup UI
+	var navGroup = Ti.UI.iPhone.createNavigationGroup({
+		window:firstContainerWindow
+	});
+	self.add(navGroup);
+	
+		about.addEventListener('click',function(e){
+		Ti.API.info('info clicked!');
+//		var Window = require('/ui/handheld/android/AboutWindow');
+//		var w = new Window();
+//		w.open();
+		//create detail view container
+//		var aboutView = new AboutView();
+//		var aboutContainerWindow = Ti.UI.createWindow({
+//			title:'About This App'
+//		});
+//		aboutContainerWindow.add(aboutView);
+//		aboutContainerWindow.open();
+		navGroup.open(aboutContainerWindow);
+	});
+	
+	/*
+	//add behavior for master view
+	firstView.addEventListener('itemSelected', function(e) {
+		detailView.fireEvent('itemSelected',e);
+		navGroup.open(detailContainerWindow);
+	});
+	*/
+	//self.add(firstView);
+	
+	//Ti.API.info(JSON.stringify(toolbar));
 		
 	return self;
 }

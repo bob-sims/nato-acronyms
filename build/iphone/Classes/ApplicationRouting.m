@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "ApplicationRouting.h"
 
-extern NSData* filterData(NSString* thedata, NSString* identifier);
+extern NSData* filterDataInRange(NSData* thedata, NSRange range);
 
 @implementation ApplicationRouting
 

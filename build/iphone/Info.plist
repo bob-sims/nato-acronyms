@@ -38,27 +38,27 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-        <key>CFBundleIconFiles</key>
-        <array>
-	<string>appicon.png</string>
-	<string>appicon@2x.png</string>
-	<string>appicon-72.png</string>
-	<string>appicon-Small-50.png</string>
-	<string>appicon-Small.png</string>
-</array>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>appicon.png</string>
+		<string>appicon@2x.png</string>
+		<string>appicon-72.png</string>
+		<string>appicon-Small-50.png</string>
+		<string>appicon-Small.png</string>
+	</array>
 
-        <key>UISupportedInterfaceOrientations~ipad</key>
-        <array>
-	<string>UIInterfaceOrientationPortrait</string>
-	<string>UIInterfaceOrientationPortraitUpsideDown</string>
-	<string>UIInterfaceOrientationLandscapeLeft</string>
-	<string>UIInterfaceOrientationLandscapeRight</string>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+		<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-        <key>UISupportedInterfaceOrientations</key>
-        <array>
-	<string>UIInterfaceOrientationPortrait</string>
+	<key>UISupportedInterfaceOrientations</key>
+		<array>
+		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-        <key>UIStatusBarStyle</key>
-        <string>UIStatusBarStyleDefault</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
 </dict>
 </plist>

@@ -5,18 +5,18 @@ reporting an issue to help us understand your environment, build settings
 and aid in debugging. Please attach this log to any issue that you report.
 ================================================================================
 
-Starting build at 11/21/12 22:30
+Starting build at 11/25/12 13:52
 
 Build details:
 
-   timestamp=05/30/12 10:21
+   timestamp=11/09/12 12:46
    module_apiversion=2
-   version=2.0.2
-   githash=2ff31a3
+   version=2.1.4
+   githash=51f2c64
 
 
 Script arguments:
-   /Users/bobsims/Library/Application Support/Titanium/mobilesdk/osx/2.0.2.GA/iphone/builder.py
+   /Users/bobsims/Library/Application Support/Titanium/mobilesdk/osx/2.1.4.GA/iphone/builder.py
    simulator
    5.1
    /Users/bobsims/Documents/Titanium Studio Workspace/nato-acronyms
@@ -26,16 +26,16 @@ Script arguments:
    iphone
    
 
-Building from: /Users/bobsims/Library/Application Support/Titanium/mobilesdk/osx/2.0.2.GA/iphone
+Building from: /Users/bobsims/Library/Application Support/Titanium/mobilesdk/osx/2.1.4.GA/iphone
 Platform: Darwin Kernel Version 11.4.2: Thu Aug 23 16:25:48 PDT 2012; root:xnu-1699.32.7~1/RELEASE_X86_64
 
 Xcode path is: /Applications/Xcode.app/Contents/Developer
 
 
-githash=2ff31a3, existing_git_hash=2ff31a3
+githash=51f2c64, existing_git_hash=51f2c64
 writing contents of /Users/bobsims/Documents/Titanium Studio Workspace/nato-acronyms/build/iphone/project.xcconfig:
 
-TI_VERSION=2.0.2.GA
+TI_VERSION=2.1.4.GA
 TI_SDK_DIR=/Users/bobsims/Library/Application Support/Titanium/mobilesdk/osx/$(TI_VERSION)/iphone
 TI_APPID=com.bobsims.natoacronyms
 OTHER_LDFLAGS[sdk=iphoneos*]=$(inherited) -weak_framework iAd

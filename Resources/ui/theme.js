@@ -9,10 +9,21 @@ module.exports = {
 	//style objects
 	headerText: {
 		left:5,
-		color:'#ffffff',
+		color:'#dbddde',
 		font: {
 			fontSize:18,
 			fontWeight:'bold'
+		}
+	},
+	
+	rowLabel: {
+		"touchEnabled":'false',
+		"width":'90%',
+		"top":12,
+		"bottom":12,
+		"font": {
+			"fontSize":20,
+			"fontWeight":'bold'
 		}
 	}
 };
