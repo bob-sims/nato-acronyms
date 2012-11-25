@@ -1,4 +1,4 @@
-var ui = require('/ui/components');
+var ui = require('/ui/components'), theme = require('/ui/theme');
 var aboutArray =[];
 
 Ti.API.info('count: '+require('/lib/db').countItems());
@@ -6,29 +6,29 @@ Ti.API.info('count: '+require('/lib/db').countItems());
 aboutArray.push({"text":'This simple app finds definitions for NATO acronyms. The current database contains '+require('/lib/db').countItems()
 	+' acronyms sourced from an unofficial spreadsheet on the ACT Tidepedia wiki.'});
 aboutArray.push({"text":'Bob Sims developed this app, along with help and inspiration from several others.'});
+aboutArray.push({"text":'This app is currently provided as-is, not officially endorsed or supported by JFTC or NATO.'});
 aboutArray.push({"email":'bob.sims@gmail.com',"title":'Email Developer'});
 aboutArray.push({"www":'bobsims.tumblr.com',"title":'Visit Developer Website'});
 aboutArray.push({"www":'www.jftc.nato.int',"title":'Visit JFTC Website'});
-aboutArray.push({"text":'This app is currently provided as-is, not officially endorsed or supported by JFTC or NATO.'});
+aboutArray.push({"text":' '});
+
 
 function createTextRow(e) {
 	var row = Ti.UI.createTableViewRow({"touchEnabled":'false',"selectedBackgroundColor":'transparent'});
-	var label = new ui.Label(e.text,{"text":e.text,"touchEnabled":'false',"width":'90%',top:5,bottom:5});
+	//var label = new ui.Label(e.text,{"text":e.text,"touchEnabled":'false',"width":'90%',top:5,bottom:5});
+	var label = new ui.Label(e.text, theme.aboutRowLabel);
+	label.text = e.text;
 	row.add(label);
 	
 	return row;
 }
 
 function createEmailButtonRow(e) {
-	var button = new ui.Button({
-			"title":e.title,
-			"email":e.email,
-			"width":'80%',
-			//"height":50,
-			//"backgroundColor":'blue',
-			//"borderRadius":10,
-			top:5
-		});
+
+	var button = new ui.Button(theme.aboutRowButton);
+	button.title = e.title;
+	button.email = e.email;
+	
 	button.addEventListener('click', function(e){
 		createEmail(e.source);
 	})
@@ -46,7 +46,10 @@ function createEmail(args) {
 }
 
 function createWebButtonRow(e) {
-	var button = new ui.Button({"title":e.title,"www":e.www,"width":'80%',top:5});
+	//var button = new ui.Button({"title":e.title,"www":e.www,"width":'80%',top:5});
+	var button = new ui.Button(theme.aboutRowButton);
+	button.title = e.title;
+	button.www = e.www;
 	button.addEventListener('click', function(e){
 		Ti.Platform.openURL('http://'+e.source.www);
 	})

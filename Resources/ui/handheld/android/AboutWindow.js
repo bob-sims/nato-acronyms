@@ -8,6 +8,7 @@ function AboutWindow() {
 	var self = new ui.Window({
 		navBarHidden:true,
 		backgroundColor:'#ffffff',
+		backgroundImage:'/images/back.jpg'
 		//backgroundImage:theme.windowBackground
 	});
 	
